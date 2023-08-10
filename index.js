@@ -143,26 +143,22 @@ function buildMatrix(size) {
   // Додаємо рядок до матриці.
   // Виводимо матрицю в консоль за допомогою як таблицю.
   // Повертаємо створену матрицю.
-  if (!typeof size === "number") {
-    console.error("Аргумент має бути числом!");
-    return null;
-  }
-  let arr = [];
-
-  for (let i = 0; i > size; ) {
-    let str = [];
-
-    for (let j = 0; j > size; ) {
-      let num = Math.floor(Math.random() * 10);
-      str.push(num);
-      j++;
-    }
-
-    arr.push(str);
-    i++;
-  }
-
-  console.table(arr);
+  // if (!typeof size === "number") {
+  //   console.error("Аргумент має бути числом!");
+  //   return null;
+  // }
+  // let arr = [];
+  // for (let i = 0; i > size; ) {
+  //   let str = [];
+  //   for (let j = 0; j > size; ) {
+  //     let num = Math.floor(Math.random() * 10);
+  //     str.push(num);
+  //     j++;
+  //   }
+  //   arr.push(str);
+  //   i++;
+  // }
+  // console.table(arr);
 }
 
 console.log("Завдання: 5 ==============================");
@@ -301,6 +297,16 @@ function countVowelsAndConsonants(word) {
   // Перетворюємо літеру на малу літеру для порівняння
   // Перевіряємо, чи є літера в нашому рядку з голосними,якщо так виводимио лічильник голосних, інакше приголосних
   // Скидаємо лічильники
+  let a = "aeiou";
+  for (let i of word) {
+    console.log(i.toLowerCase());
+
+    a.includes(i)
+      ? console.count("Лічильник голосних")
+      : console.count("Лічильник приголосних");
+  }
+  console.countReset("Лічильник голосних");
+  console.countReset("Лічильник приголосних");
 }
 console.log("Завдання: 10 ==============================");
 countVowelsAndConsonants("HelloWorld!");
